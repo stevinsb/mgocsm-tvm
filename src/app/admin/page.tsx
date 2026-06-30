@@ -193,14 +193,14 @@ export default function AdminPage() {
                 events={events}
                 editingItem={editingItem}
                 setEditingItem={setEditingItem}
-                onSave={async (data, id) => {
+                onSave={async (data: any, id?: string) => {
                   if (id) await db.updateEvent({ ...data, id });
                   else await db.addEvent(data);
                   setEvents(await db.getEvents());
                   setEditingItem(null);
                   showToast(id ? "Event updated!" : "Event added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteEvent(id);
                   setEvents(await db.getEvents());
                   showToast("Event deleted.", "error");
@@ -214,14 +214,14 @@ export default function AdminPage() {
                 newsletters={newsletters}
                 editingItem={editingItem}
                 setEditingItem={setEditingItem}
-                onSave={async (data, id) => {
+                onSave={async (data: any, id?: string) => {
                   if (id) await db.updateNewsletter({ ...data, id });
                   else await db.addNewsletter(data);
                   setNewsletters(await db.getNewsletters());
                   setEditingItem(null);
                   showToast(id ? "Newsletter updated!" : "Newsletter added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteNewsletter(id);
                   setNewsletters(await db.getNewsletters());
                   showToast("Newsletter deleted.", "error");
@@ -235,14 +235,14 @@ export default function AdminPage() {
                 leadership={leadership}
                 editingItem={editingItem}
                 setEditingItem={setEditingItem}
-                onSave={async (data, id) => {
+                onSave={async (data: any, id?: string) => {
                   if (id) await db.updateLeadershipMember({ ...data, id });
                   else await db.addLeadershipMember(data);
                   setLeadership(await db.getLeadership());
                   setEditingItem(null);
                   showToast(id ? "Member updated!" : "Member added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteLeadershipMember(id);
                   setLeadership(await db.getLeadership());
                   showToast("Member deleted.", "error");
@@ -256,13 +256,13 @@ export default function AdminPage() {
                 gallery={gallery}
                 editingItem={editingItem}
                 setEditingItem={setEditingItem}
-                onSave={async (data) => {
+                onSave={async (data: any) => {
                   await db.addGalleryItem(data);
                   setGallery(await db.getGallery());
                   setEditingItem(null);
                   showToast("Gallery item added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteGalleryItem(id);
                   setGallery(await db.getGallery());
                   showToast("Item deleted.", "error");
@@ -276,14 +276,14 @@ export default function AdminPage() {
                 blogPosts={blogPosts}
                 editingItem={editingItem}
                 setEditingItem={setEditingItem}
-                onSave={async (data, id) => {
+                onSave={async (data: any, id?: string) => {
                   if (id) await db.updateBlogPost({ ...data, id });
                   else await db.addBlogPost(data);
                   setBlogPosts(await db.getBlogPosts());
                   setEditingItem(null);
                   showToast(id ? "Post updated!" : "Post added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteBlogPost(id);
                   setBlogPosts(await db.getBlogPosts());
                   showToast("Post deleted.", "error");
@@ -295,12 +295,12 @@ export default function AdminPage() {
             {activeTab === "announcements" && (
               <AnnouncementsPanel
                 announcements={announcements}
-                onSave={async (data) => {
+                onSave={async (data: any) => {
                   await db.addAnnouncement(data);
                   setAnnouncements(await db.getAnnouncements());
                   showToast("Announcement added!");
                 }}
-                onDelete={async (id) => {
+                onDelete={async (id: string) => {
                   await db.deleteAnnouncement(id);
                   setAnnouncements(await db.getAnnouncements());
                   showToast("Announcement deleted.", "error");

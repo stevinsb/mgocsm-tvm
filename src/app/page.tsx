@@ -64,8 +64,8 @@ export default function HomePage() {
     },
     {
       quote: "Amidst academic stress and competition, our weekly unit prayers serve as an oasis of peace. I highly encourage every student in Trivandrum to join this movement.",
-      author: "Basil K. George",
-      role: "Arts College Student",
+      author: "Iwan Luka Prince",
+      role: "Cheruvakkal MGOCSM",
     }
   ];
 
@@ -74,7 +74,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* Feast/Announcement Banner */}
-      {announcements.length > 0 && announcements[0].isFeast && (
+      {/* {announcements.length > 0 && announcements[0].isFeast && (
         <div className="bg-gradient-to-r from-navy via-navy-light to-navy border-b border-gold/30 text-white py-2 px-4 text-center text-xs sm:text-sm font-medium tracking-wide flex items-center justify-center gap-2 relative z-10">
           <Bell className="w-4 h-4 text-gold animate-bounce" />
           <span>
@@ -84,7 +84,7 @@ export default function HomePage() {
             View Events <ChevronRight className="w-3 h-3" />
           </Link>
         </div>
-      )}
+      )} */}
 
       {/* Hero Section */}
       <section className="relative h-[92vh] flex items-center justify-center overflow-hidden bg-slate-950">
