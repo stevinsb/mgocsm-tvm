@@ -121,8 +121,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="font-inter text-slate-600 dark:text-slate-350 text-base md:text-lg max-w-2xl leading-relaxed mt-2"
-          >
+            className="font-inter text-slate-500 dark:text-slate-100 text-base md:text-lg max-w-2xl leading-relaxed mt-2"          >
             Empowering students to grow spiritually, serve society, and strengthen their Orthodox faith in a modern world.
           </motion.p>
 
