@@ -349,7 +349,7 @@ export const initialLeadership: LeadershipMember[] = [
   },
   {
     id: "lead-14",
-    name: "Elsa Marium Sibi",
+    name: "Elsa Mariam Sibi",
     position: "Kulathupuzha District Coordinator",
     photo: "elsa.png",
     order: 14,
