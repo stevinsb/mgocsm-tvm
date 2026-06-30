@@ -30,8 +30,7 @@ export interface GalleryItem {
   title: string;
   url: string;
   type: "image" | "video";
-  category: "Camp" | "Retreat" | "Conference" | "Sports" | "Charity" | "Prayer";
-}
+  category: "Camp" | "Retreat" | "Conference" | "Sports" | "Charity" | "Prayer" | "Inauguration" | "Bulletin Release" | "Interaction" | "Session" | "Worship" | "Guest Session" | "Felicitation" | "Event";}
 
 export interface LeadershipMember {
   id: string;
@@ -172,89 +171,89 @@ export const initialBlogPosts: BlogPost[] = [
   }
 ];
 
-export const initialGalleryItems: GalleryItem[] = [
-  {
-    id: "gal-1",
-    title: "Inauguration of En Arche 2026",
-    description:
-      "His Grace Dr. Abraham Mar Seraphim Metropolitan officially inaugurating En Arche 2026 with the ceremonial lamp lighting.",
-    url: "/en-arche-1.jpg",
-    type: "image",
-    category: "Inauguration",
-  },
-  {
-    id: "gal-2",
-    title: "Release of MGOCSM Monthly Bulletin – Theoria",
-    description:
-      "His Grace Dr. Abraham Mar Seraphim Metropolitan releasing the MGOCSM Monthly Bulletin 'Theoria' by presenting the first copy to the Diocesan Secretary.",
-    url: "/en-arche-2.jpg",
-    type: "image",
-    category: "Bulletin Release",
-  },
-  {
-    id: "gal-3",
-    title: "Interactive Session with H.G. Dr. Abraham Mar Seraphim Metropolitan",
-    description:
-      "His Grace engaging in an interactive discussion with students, answering questions and sharing spiritual guidance.",
-    url: "/en-arche-4.JPG",
-    type: "image",
-    category: "Interaction",
-  },
-  {
-    id: "gal-4",
-    title: '"Such A Time As This" – Session by Fr. Dr. Vivek Varghese',
-    description:
-      "An inspiring and thought-provoking session by Fr. Dr. Vivek Varghese challenging students to live faithfully and courageously in today's world.",
-    url: "/en-arche-3.jpg",
-    type: "image",
-    category: "Session",
-  },
-  {
-    id: "gal-5",
-    title: "Gen Z Worship Session by Ivano MGOCSM Team",
-    description:
-      "A vibrant worship experience led by the Ivano MGOCSM Team, filling the gathering with worship, joy, music, and youthful energy.",
-    url: "/en-arche-5.JPG",
-    type: "image",
-    category: "Worship",
-  },
-  {
-    id: "gal-6",
-    title: "Creative Session with RJ Mobin Varghese Thomas",
-    description:
-      "RJ Mobin Varghese Thomas (Radio Mango) inspired participants with creative ideas, encouraging innovation, collaboration, and teamwork.",
-    url: "/rjmobin.jpeg",
-    type: "image",
-    category: "Guest Session",
-  },
-  {
-    id: "gal-7",
-    title: "Token of Love Presented to H.G. Dr. Abraham Mar Seraphim Metropolitan",
-    description:
-      "MGOCSM Trivandrum Diocese presenting a token of love and gratitude to His Grace Dr. Abraham Mar Seraphim Metropolitan.",
-    url: "/en-arche-6.JPG",
-    type: "image",
-    category: "Felicitation",
-  },
-  {
-    id: "gal-8",
-    title: "Token of Love Presented to Fr. Dr. Vivek Varghese",
-    description:
-      "MGOCSM Trivandrum Diocese honouring Fr. Dr. Vivek Varghese with a token of appreciation for his inspiring ministry and guidance.",
-    url: "/en-arche-7.JPG",
-    type: "image",
-    category: "Felicitation",
-  },
-  {
-    id: "gal-9",
-    title: "En Arche 2026 — The Gathering at Holy Trinity Chapel",
-    description:
-      "A memorable gathering of MGOCSM members, clergy, and delegates during En Arche 2026 at Holy Trinity Chapel, Ulloor.",
-    url: "/mgocsm-group.jpg",
-    type: "image",
-    category: "Event",
-  },
-];
+// export const initialGalleryItems: GalleryItem[] = [
+//   {
+//     id: "gal-1",
+//     title: "Inauguration of En Arche 2026",
+//     description:
+//       "His Grace Dr. Abraham Mar Seraphim Metropolitan officially inaugurating En Arche 2026 with the ceremonial lamp lighting.",
+//     url: "/en-arche-1.jpg",
+//     type: "image",
+//     category: "Inauguration",
+//   },
+//   {
+//     id: "gal-2",
+//     title: "Release of MGOCSM Monthly Bulletin – Theoria",
+//     description:
+//       "His Grace Dr. Abraham Mar Seraphim Metropolitan releasing the MGOCSM Monthly Bulletin 'Theoria' by presenting the first copy to the Diocesan Secretary.",
+//     url: "/en-arche-2.jpg",
+//     type: "image",
+//     category: "Bulletin Release",
+//   },
+//   {
+//     id: "gal-3",
+//     title: "Interactive Session with H.G. Dr. Abraham Mar Seraphim Metropolitan",
+//     description:
+//       "His Grace engaging in an interactive discussion with students, answering questions and sharing spiritual guidance.",
+//     url: "/en-arche-4.JPG",
+//     type: "image",
+//     category: "Interaction",
+//   },
+//   {
+//     id: "gal-4",
+//     title: '"Such A Time As This" – Session by Fr. Dr. Vivek Varghese',
+//     description:
+//       "An inspiring and thought-provoking session by Fr. Dr. Vivek Varghese challenging students to live faithfully and courageously in today's world.",
+//     url: "/en-arche-3.jpg",
+//     type: "image",
+//     category: "Session",
+//   },
+//   {
+//     id: "gal-5",
+//     title: "Gen Z Worship Session by Ivano MGOCSM Team",
+//     description:
+//       "A vibrant worship experience led by the Ivano MGOCSM Team, filling the gathering with worship, joy, music, and youthful energy.",
+//     url: "/en-arche-5.JPG",
+//     type: "image",
+//     category: "Worship",
+//   },
+//   {
+//     id: "gal-6",
+//     title: "Creative Session with RJ Mobin Varghese Thomas",
+//     description:
+//       "RJ Mobin Varghese Thomas (Radio Mango) inspired participants with creative ideas, encouraging innovation, collaboration, and teamwork.",
+//     url: "/rjmobin.jpeg",
+//     type: "image",
+//     category: "Guest Session",
+//   },
+//   {
+//     id: "gal-7",
+//     title: "Token of Love Presented to H.G. Dr. Abraham Mar Seraphim Metropolitan",
+//     description:
+//       "MGOCSM Trivandrum Diocese presenting a token of love and gratitude to His Grace Dr. Abraham Mar Seraphim Metropolitan.",
+//     url: "/en-arche-6.JPG",
+//     type: "image",
+//     category: "Felicitation",
+//   },
+//   {
+//     id: "gal-8",
+//     title: "Token of Love Presented to Fr. Dr. Vivek Varghese",
+//     description:
+//       "MGOCSM Trivandrum Diocese honouring Fr. Dr. Vivek Varghese with a token of appreciation for his inspiring ministry and guidance.",
+//     url: "/en-arche-7.JPG",
+//     type: "image",
+//     category: "Felicitation",
+//   },
+//   {
+//     id: "gal-9",
+//     title: "En Arche 2026 — The Gathering at Holy Trinity Chapel",
+//     description:
+//       "A memorable gathering of MGOCSM members, clergy, and delegates during En Arche 2026 at Holy Trinity Chapel, Ulloor.",
+//     url: "/mgocsm-group.jpg",
+//     type: "image",
+//     category: "Event",
+//   },
+// ];
 
 export const initialLeadership: LeadershipMember[] = [
   {
