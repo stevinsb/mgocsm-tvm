@@ -107,7 +107,7 @@ export default function HomePage() {
             className="flex flex-col items-center gap-4"
           >
             <span className="bg-gold/10 text-gold border border-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
-              Malankara Orthodox Syrian Church
+            Mar Gregorios Orthodox Christian Student Movement
             </span>
             <h1 className="font-poppins font-extrabold text-5xl md:text-7xl text-navy dark:text-white tracking-tight leading-tight max-w-4xl">
               MGOCSM <span className="gold-gradient-text">Trivandrum</span>
@@ -326,7 +326,7 @@ export default function HomePage() {
       <section className="py-20 bg-light-gray dark:bg-navy-dark/10">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <span className="text-gold font-bold tracking-widest text-xs uppercase">
-            Youth Voices
+          The MGOCSM Journey
           </span>
           <h2 className="font-poppins font-bold text-3xl text-navy dark:text-white mt-1 mb-12">
             What Our Members Say

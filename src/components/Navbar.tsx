@@ -56,9 +56,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo Section */}
             <Link href="/" className="flex items-center gap-2 group">
-              <span className="w-10 h-10 rounded-full bg-navy flex items-center justify-center border-2 border-gold font-poppins font-bold text-gold text-lg transition-transform duration-300 group-hover:scale-105">
-                M
-              </span>
+            <img
+  src="/Mgocsm.png"
+  alt="MGOCSM Logo"
+  className="w-10 h-10 rounded-full object-cover border-2 border-gold transition-transform duration-300 group-hover:scale-105"
+/>
               <div className="flex flex-col">
                 <span className="font-poppins font-bold text-navy dark:text-white tracking-wider leading-none text-base">
                   MGOCSM
