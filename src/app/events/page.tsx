@@ -153,7 +153,7 @@ export default function EventsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {upcomingEvents.map(event => (
                   <div key={event.id} className="glass p-6 rounded-3xl border border-slate-200/40 dark:border-slate-800/40 flex flex-col md:flex-row gap-6 shadow-sm">
-                    <div className="w-full md:w-2/5 h-44 rounded-2xl overflow-hidden shrink-0">
+                    <div className="w-full md:w-2/5 rounded-2xl overflow-hidden shrink-0">
                       <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex flex-col justify-between flex-grow gap-4">
@@ -162,7 +162,7 @@ export default function EventsPage() {
                           {new Date(event.date).toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" })}
                         </span>
                         <h3 className="font-poppins font-bold text-lg text-navy dark:text-white">{event.title}</h3>
-                        <p className="font-inter text-slate-500 text-xs leading-relaxed line-clamp-2">{event.description}</p>
+                        <p className="font-inter text-slate-500 text-xs leading-relaxed">{event.description}</p>
                       </div>
                       <div className="flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800/40 pt-3">
                         <div className="flex items-center gap-1.5 text-xs text-slate-450">

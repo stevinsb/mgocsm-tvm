@@ -52,7 +52,7 @@ const activitiesList = [
   },
   {
     icon: Users,
-    title: "Youth Conferences",
+    title: "Student Conferences",
     description: "Large assemblies hosting academic debates, panel discussions on contemporary challenges, theological workshops, and cultural fests.",
   },
   {
@@ -95,7 +95,7 @@ export default function ActivitiesPage() {
       {/* Overview */}
       <section className="py-16 max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-poppins font-bold text-2xl text-navy dark:text-white leading-snug">
-          Vibrant Youth Pillars in Worship, Study, and Service
+          Vibrant Student Pillars in Worship, Study, and Service
         </h2>
         <p className="font-inter text-slate-500 text-sm leading-relaxed mt-4">
           Through our diverse activities, we ensure that students discover their God-given talents, deepen their theological knowledge, and engage in charity.
@@ -147,14 +147,14 @@ export default function ActivitiesPage() {
             Want to lead an activity?
           </h2>
           <p className="font-inter text-slate-500 text-sm leading-relaxed">
-            We are always looking for passionate youth leaders, Bible circle mentors, and volunteer coordinators for our social programs.
+            We are always looking for passionate student leaders, Bible circle mentors, and volunteer coordinators for our social programs.
           </p>
-          {/* <Link
-            href="/contact?volunteer=true"
-            className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy-dark px-6 py-2.5 rounded-full font-inter font-bold text-xs tracking-wider uppercase mt-2 shadow-md"
-          >
-            Volunteer Signup
-          </Link> */}
+          <Link
+  href="/contact"
+  className="bg-navy hover:bg-navy-light text-white dark:bg-gold dark:text-navy-dark px-6 py-2.5 rounded-full font-inter font-bold text-xs tracking-wider uppercase mt-2 shadow-md"
+>
+  Contact Us
+</Link>
         </div>
       </section>
 

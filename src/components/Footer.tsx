@@ -13,9 +13,11 @@ export default function Footer() {
           {/* Column 1: Brand details */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <span className="w-9 h-9 rounded-full bg-navy flex items-center justify-center border border-gold font-poppins font-bold text-gold text-base">
-                M
-              </span>
+            <img
+  src="/Mgocsm.png"
+  alt="MGOCSM Logo"
+  className="w-9 h-9 rounded-full object-cover border border-gold"
+/>
               <div className="flex flex-col">
                 <span className="font-poppins font-bold text-white tracking-wider leading-none text-sm">
                   MGOCSM
