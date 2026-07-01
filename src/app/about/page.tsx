@@ -15,12 +15,12 @@ const timelineEvents = [
   {
     year: "1910",
     title: "First General Conference",
-    description: "The first annual conference was held at Tiruvalla, presided over by Metropolitan His Grace Pulikkottil Joseph Mar Dionysius II, setting the tone for theological discussions and youth leadership.",
+    description: "The first annual conference was held at Tiruvalla, presided over by Metropolitan His Grace Pulikkottil Joseph Mar Dionysius II, setting the tone for theological discussions and student leadership.",
   },
   {
     year: "1960",
     title: "Adopting the Name",
-    description: "Renamed as the 'Mar Gregorios Orthodox Christian Student Movement' (MGOCSM) in honor of Saint Gregorios of Parumala, our patron saint who championed the education of youth.",
+    description: "Renamed as the 'Mar Gregorios Orthodox Christian Student Movement' (MGOCSM) in honor of Saint Gregorios of Parumala, our patron saint who championed the education of students.",
   },
   {
     year: "1985",
@@ -67,7 +67,7 @@ export default function AboutPage() {
       {/* Intro Block */}
       <section className="py-20 max-w-5xl mx-auto px-4 text-center">
         <h2 className="font-poppins font-bold text-2xl md:text-3xl text-navy dark:text-white leading-snug">
-          Empowering the Youth of the Malankara Orthodox Syrian Church since 1908
+          Empowering the students of the Malankara Orthodox Syrian Church since 1908
         </h2>
         <p className="font-inter text-slate-600 dark:text-slate-355 text-base md:text-lg leading-relaxed mt-6">
           MGOCSM is the oldest Christian student organization in India. For over a century, we have provided a nurturing environment for high school, college, and university students to deepen their spiritual roots, excel in academic studies, and engage in charitable social action.
@@ -155,7 +155,7 @@ export default function AboutPage() {
                     Our Vision
                   </h3>
                   <p className="font-inter text-slate-600 dark:text-slate-350 text-sm leading-relaxed mt-2">
-                    To raise a generation of Orthodox Christian youths who are spiritually anchored, intellectually equipped, and socially responsible, actively participating in the life and mission of the Holy Church.
+                    To raise a generation of Orthodox Christian students who are spiritually anchored, intellectually equipped, and socially responsible, actively participating in the life and mission of the Holy Church.
                   </p>
                 </div>
               </div>

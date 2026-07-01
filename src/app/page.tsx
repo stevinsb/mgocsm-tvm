@@ -274,11 +274,11 @@ export default function HomePage() {
                   key={event.id}
                   className="group rounded-3xl overflow-hidden shadow-md dark:shadow-none bg-slate-50 dark:bg-dark-card border border-slate-150 dark:border-slate-800/40 flex flex-col"
                 >
-                  <div className="relative h-56 w-full overflow-hidden">
+                  <div className="relative w-full overflow-hidden">
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-navy text-white dark:bg-gold dark:text-navy-dark text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                       Featured
@@ -378,7 +378,7 @@ export default function HomePage() {
             Be a Part of the <span className="text-gold">Movement</span>
           </h2>
           <p className="font-inter text-slate-300 max-w-2xl leading-relaxed text-sm md:text-base">
-            Join thousands of Orthodox youth across the Trivandrum Diocese. Grow in liturgical worship, deep theological study, and active charity service.
+            Join thousands of Orthodox students across the Trivandrum Diocese. Grow in liturgical worship, deep theological study, and active charity service.
           </p>
           {/* <div className="flex flex-wrap gap-4 justify-center mt-3">
             <Link

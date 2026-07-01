@@ -588,7 +588,7 @@ function BlogPanel({ blogPosts, editingItem, setEditingItem, onSave, onDelete }:
           <Field label="Author"><input className={inputCls} value={form.author} onChange={f("author")} placeholder="Author name" /></Field>
           <Field label="Date"><input className={inputCls} type="date" value={form.date} onChange={f("date")} /></Field>
           <Field label="Cover Image URL"><input className={inputCls} value={form.image} onChange={f("image")} placeholder="/image.jpg or https://..." /></Field>
-          <Field label="Tags (comma separated)"><input className={inputCls} value={form.tags} onChange={f("tags")} placeholder="Faith, Retreat, Youth" /></Field>
+          <Field label="Tags (comma separated)"><input className={inputCls} value={form.tags} onChange={f("tags")} placeholder="Faith, Retreat, Students" /></Field>
           <Field label="Excerpt"><textarea className={inputCls} rows={2} value={form.excerpt} onChange={f("excerpt")} placeholder="Short summary..." /></Field>
           <Field label="Content"><textarea className={inputCls} rows={5} value={form.content} onChange={f("content")} placeholder="Full post content..." /></Field>
         </div>

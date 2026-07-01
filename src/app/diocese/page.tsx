@@ -76,7 +76,7 @@ export default function DiocesePage() {
                   </h3>
                 </div>
                 <p className="font-inter text-slate-650 dark:text-slate-350 text-sm md:text-base leading-relaxed italic">
-                  &ldquo;My dear youth, you are not just the future of the Church; you are the present. Let your studies be crowned with prayer, and let your achievements be dedicated to the service of God and our fellow human beings.&rdquo;
+                  &ldquo;My dear student, you are not just the future of the Church; you are the present. Let your studies be crowned with prayer, and let your achievements be dedicated to the service of God and our fellow human beings.&rdquo;
                 </p>
                 <div className="pt-4 border-t border-slate-200/40 flex flex-wrap gap-4 text-xs text-slate-500">
                   <span className="flex items-center gap-1.5">
@@ -103,7 +103,7 @@ export default function DiocesePage() {
                     MGOCSM Vice President
                   </span>
                   <p className="font-inter text-slate-500 text-xs mt-2 leading-relaxed">
-                    Oversees the spiritual directives, youth retreats, and liturgical educational camps across the diocese.
+                    Oversees the spiritual directives, student retreats, and liturgical educational camps across the diocese.
                   </p>
                 </div>
               </div>
