@@ -59,7 +59,7 @@ export default function Navbar() {
             <img
   src="/Mgocsm.png"
   alt="MGOCSM Logo"
-  className="w-10 h-10 rounded-full object-cover border-2 border-gold transition-transform duration-300 group-hover:scale-105"
+  className="h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
 />
 <img
   src="/mgocsm-logo.png"
