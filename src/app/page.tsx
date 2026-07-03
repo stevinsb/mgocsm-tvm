@@ -106,9 +106,7 @@ export default function HomePage() {
   transition={{ duration: 0.8 }}
   className="flex flex-col items-center gap-4"
 >
-  <span className="bg-gold/10 text-gold border border-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
-    Mar Gregorios Orthodox Christian Student Movement
-  </span>
+  
 
   {/* Logo image replacing the text heading */}
   <img
