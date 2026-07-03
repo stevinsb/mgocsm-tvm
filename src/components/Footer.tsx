@@ -18,14 +18,11 @@ export default function Footer() {
   alt="MGOCSM Logo"
   className="w-9 h-9 rounded-full object-cover border border-gold"
 />
-              <div className="flex flex-col">
-                <span className="font-poppins font-bold text-white tracking-wider leading-none text-sm">
-                  MGOCSM
-                </span>
-                <span className="font-inter text-gold font-semibold tracking-widest text-[8px] uppercase">
-                  Trivandrum Diocese
-                </span>
-              </div>
+<img
+  src="/mgocsm-logo.png"
+  alt="MGOCSM Trivandrum Diocese"
+  className="h-12 w-auto object-contain brightness-0 invert"
+/>
             </Link>
             <p className="font-inter text-sm text-slate-400 mt-2 leading-relaxed">
               Mar Gregorios Orthodox Christian Student Movement (MGOCSM) is the oldest Christian student organization in India, empowering students to grow in faith, education, and service.

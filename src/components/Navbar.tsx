@@ -64,7 +64,7 @@ export default function Navbar() {
 <img
   src="/mgocsm-logo.png"
   alt="MGOCSM Trivandrum Diocese"
-  className="h-10 w-auto object-contain brightness-0 invert"
+  className="h-13 w-auto object-contain brightness-0 invert"
 />
             </Link>
 
