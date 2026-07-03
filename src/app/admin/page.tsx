@@ -386,12 +386,23 @@ function EventsPanel({ events, editingItem, setEditingItem, onSave, onDelete }: 
 
 // ─── NEWSLETTERS PANEL ────────────────────────────────────────────────────────
 function NewslettersPanel({ newsletters, editingItem, setEditingItem, onSave, onDelete }: any) {
-  const blank = { issue: "", title: "Gregorian Voice", month: "", coverColor: "#0F2D5C", description: "", highlights: "", downloadUrl: "", previewUrl: "", size: "", isFeatured: false };
+  const blank = { issue: "", title: "Theoria", month: "", coverColor: "#0F2D5C", coverImage: "", description: "", highlights: "", downloadUrl: "", previewUrl: "", size: "", isFeatured: false };
   const [form, setForm] = useState(blank);
 
   useEffect(() => {
-    if (editingItem) setForm({ ...editingItem, highlights: (editingItem.highlights ?? []).join("\n") });
-    else setForm(blank);
+    if (editingItem) {
+      setForm({
+        ...blank,
+        ...editingItem,
+        highlights: (editingItem.highlights ?? []).join("\n"),
+        coverImage: editingItem.coverImage ?? "",
+        previewUrl: editingItem.previewUrl ?? "",
+        coverColor: editingItem.coverColor ?? "#0F2D5C",
+        size: editingItem.size ?? "",
+      });
+    } else {
+      setForm(blank);
+    }
   }, [editingItem]);
 
   const f = (k: string) => (e: any) => setForm((p: any) => ({ ...p, [k]: e.target.type === "checkbox" ? e.target.checked : e.target.value }));
@@ -407,15 +418,30 @@ function NewslettersPanel({ newsletters, editingItem, setEditingItem, onSave, on
       <div className="bg-white dark:bg-dark-card rounded-3xl p-6 border border-slate-200/40 dark:border-slate-800/40 shadow-sm">
         <h2 className="font-poppins font-bold text-base text-navy dark:text-white mb-5">{editingItem ? "Edit Newsletter" : "Add New Newsletter"}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Field label="Issue (e.g. Issue 04)"><input className={inputCls} value={form.issue} onChange={f("issue")} placeholder="Issue 04" /></Field>
-          <Field label="Title"><input className={inputCls} value={form.title} onChange={f("title")} placeholder="Gregorian Voice" /></Field>
+          <Field label="Issue (e.g. Issue 01)"><input className={inputCls} value={form.issue} onChange={f("issue")} placeholder="Issue 01" /></Field>
+          <Field label="Title"><input className={inputCls} value={form.title} onChange={f("title")} placeholder="Theoria" /></Field>
           <Field label="Month (e.g. June 2026)"><input className={inputCls} value={form.month} onChange={f("month")} placeholder="June 2026" /></Field>
-          <Field label="Cover Color (hex)"><input className={inputCls} type="color" value={form.coverColor} onChange={f("coverColor")} /></Field>
-          <Field label="Download URL (PDF link)"><input className={inputCls} value={form.downloadUrl} onChange={f("downloadUrl")} placeholder="https://drive.google.com/..." /></Field>
-          <Field label="File Size"><input className={inputCls} value={form.size} onChange={f("size")} placeholder="2.5 MB" /></Field>
+          <Field label="Cover Color (fallback if no image)"><input className={inputCls} type="color" value={form.coverColor} onChange={f("coverColor")} /></Field>
+          <Field label="Cover Image URL (poster/thumbnail)">
+            <input className={inputCls} value={form.coverImage} onChange={f("coverImage")} placeholder="https://drive.google.com/... or /theoria-cover.jpeg" />
+          </Field>
+          <Field label="Download URL (PDF — up to 15MB supported)">
+            <input className={inputCls} value={form.downloadUrl} onChange={f("downloadUrl")} placeholder="https://drive.google.com/file/..." />
+          </Field>
+          <Field label="File Size"><input className={inputCls} value={form.size} onChange={f("size")} placeholder="e.g. 8.5 MB (up to 15 MB)" /></Field>
+          <Field label="Preview URL (optional)"><input className={inputCls} value={form.previewUrl} onChange={f("previewUrl")} placeholder="https://..." /></Field>
           <Field label="Description"><textarea className={inputCls} rows={3} value={form.description} onChange={f("description")} placeholder="Brief summary of this issue..." /></Field>
-          <Field label="Highlights (one per line)"><textarea className={inputCls} rows={4} value={form.highlights} onChange={f("highlights")} placeholder={"Retreat Report\nMetropolitan's Message\nBible Quiz Results"} /></Field>
+          <Field label="Highlights (one per line)"><textarea className={inputCls} rows={4} value={form.highlights} onChange={f("highlights")} placeholder={"Released by H.G. Dr. Abraham Mar Seraphim\nEn Arche 2026 Coverage\nMonthly Bulletin"} /></Field>
         </div>
+
+        {/* Cover image preview */}
+        {form.coverImage && (
+          <div className="mt-4">
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Cover Preview</p>
+            <img src={form.coverImage} alt="Cover preview" className="h-40 rounded-xl object-cover border border-slate-200 dark:border-slate-700" />
+          </div>
+        )}
+
         <div className="mt-4">
           <label className="flex items-center gap-2 text-sm font-inter text-slate-600 dark:text-slate-300 cursor-pointer">
             <input type="checkbox" checked={form.isFeatured} onChange={f("isFeatured")} className="w-4 h-4 accent-gold" />
@@ -588,7 +614,7 @@ function BlogPanel({ blogPosts, editingItem, setEditingItem, onSave, onDelete }:
           <Field label="Author"><input className={inputCls} value={form.author} onChange={f("author")} placeholder="Author name" /></Field>
           <Field label="Date"><input className={inputCls} type="date" value={form.date} onChange={f("date")} /></Field>
           <Field label="Cover Image URL"><input className={inputCls} value={form.image} onChange={f("image")} placeholder="/image.jpg or https://..." /></Field>
-          <Field label="Tags (comma separated)"><input className={inputCls} value={form.tags} onChange={f("tags")} placeholder="Faith, Retreat, Students" /></Field>
+          <Field label="Tags (comma separated)"><input className={inputCls} value={form.tags} onChange={f("tags")} placeholder="Faith, Retreat, Youth" /></Field>
           <Field label="Excerpt"><textarea className={inputCls} rows={2} value={form.excerpt} onChange={f("excerpt")} placeholder="Short summary..." /></Field>
           <Field label="Content"><textarea className={inputCls} rows={5} value={form.content} onChange={f("content")} placeholder="Full post content..." /></Field>
         </div>

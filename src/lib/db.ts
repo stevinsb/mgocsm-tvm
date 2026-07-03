@@ -53,6 +53,7 @@ export interface NewsletterItem {
   title: string;
   month: string;
   coverColor: string;
+  coverImage?: string;
   description: string;
   highlights: string[];
   downloadUrl: string;
@@ -134,6 +135,7 @@ const mapNewsletter = (r: any): NewsletterItem => ({
   title: r.title,
   month: r.month,
   coverColor: r.cover_color,
+  coverImage: r.cover_image,
   description: r.description,
   highlights: r.highlights ?? [],
   downloadUrl: r.download_url,
@@ -318,6 +320,7 @@ export const db = {
       title: nl.title,
       month: nl.month,
       cover_color: nl.coverColor,
+      cover_image: nl.coverImage ?? null,
       description: nl.description,
       highlights: nl.highlights,
       download_url: nl.downloadUrl,
@@ -335,6 +338,7 @@ export const db = {
       title: nl.title,
       month: nl.month,
       cover_color: nl.coverColor,
+      cover_image: nl.coverImage ?? null,
       description: nl.description,
       highlights: nl.highlights,
       download_url: nl.downloadUrl,
@@ -342,7 +346,7 @@ export const db = {
       size: nl.size,
       is_featured: nl.isFeatured,
     }).eq("id", nl.id);
-    if (error) console.error(error);
+    if (error) console.error("Supabase updateNewsletter error:", JSON.stringify(error));
   },
 
   deleteNewsletter: async (id: string): Promise<void> => {
@@ -392,7 +396,7 @@ export const db = {
   },
 
   loginAdmin: (email: string, password: string): boolean => {
-    if (email === "mgocsm.tvmdiocese@gmail.com" && password === "mgocsmtvm@2026") {
+    if (email === "mgocsm.tvmdiocese@gmail.com" && password === "MGOCSM@1908") {
       localStorage.setItem("mg_admin_auth", "true");
       return true;
     }

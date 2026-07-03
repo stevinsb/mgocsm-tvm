@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { db, NewsletterItem } from "@/lib/db";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, BookOpen, ChevronDown, ChevronUp, Mail, ExternalLink, Loader2 } from "lucide-react";
+import { Download, BookOpen, ChevronDown, ChevronUp, ExternalLink, Loader2 } from "lucide-react";
 
 function NewsletterCard({ nl, index }: { nl: NewsletterItem; index: number }) {
   const [expanded, setExpanded] = useState(false);
@@ -18,12 +18,28 @@ function NewsletterCard({ nl, index }: { nl: NewsletterItem; index: number }) {
       className="glass rounded-3xl border border-slate-200/40 dark:border-slate-800/40 overflow-hidden shadow-sm"
     >
       <div className="flex flex-col md:flex-row">
-        <div className="w-full md:w-2 shrink-0 h-2 md:h-auto" style={{ backgroundColor: nl.coverColor }} />
-        <div className="hidden md:flex w-28 shrink-0 flex-col items-center justify-center gap-2 px-4 py-8 text-white" style={{ backgroundColor: nl.coverColor }}>
-          <BookOpen className="w-6 h-6 opacity-70" />
-          <span className="font-poppins font-black text-xs tracking-widest uppercase text-center leading-tight opacity-90">{nl.issue}</span>
-          <span className="text-[10px] font-inter opacity-60 tracking-wider text-center">{nl.month}</span>
-        </div>
+
+        {/* Cover Image or Color Sidebar */}
+        {nl.coverImage ? (
+          <div className="w-full md:w-48 shrink-0 overflow-hidden">
+            <img
+              src={nl.coverImage}
+              alt={`${nl.title} cover`}
+              className="w-full h-48 md:h-full object-cover"
+            />
+          </div>
+        ) : (
+          <>
+            <div className="w-full md:w-2 shrink-0 h-2 md:h-auto" style={{ backgroundColor: nl.coverColor }} />
+            <div className="hidden md:flex w-28 shrink-0 flex-col items-center justify-center gap-2 px-4 py-8 text-white" style={{ backgroundColor: nl.coverColor }}>
+              <BookOpen className="w-6 h-6 opacity-70" />
+              <span className="font-poppins font-black text-xs tracking-widest uppercase text-center leading-tight opacity-90">{nl.issue}</span>
+              <span className="text-[10px] font-inter opacity-60 tracking-wider text-center">{nl.month}</span>
+            </div>
+          </>
+        )}
+
+        {/* Content */}
         <div className="flex flex-col flex-grow p-6 gap-4">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="flex flex-col gap-1">
@@ -111,16 +127,6 @@ export default function NewsletterPage() {
           </p>
         </div>
       </section>
-
-      {/* <section className="bg-gold/10 dark:bg-gold/5 border-y border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Mail className="w-5 h-5 text-gold shrink-0" />
-            <p className="font-inter text-sm text-navy dark:text-white font-medium">Get the latest issue delivered to your inbox — contact us to subscribe.</p>
-          </div>
-          <a href="/contact" className="shrink-0 bg-navy dark:bg-gold dark:text-navy text-white text-xs font-bold px-6 py-2.5 rounded-full hover:-translate-y-0.5 transition-all duration-200 shadow-sm">Subscribe</a>
-        </div>
-      </section> */}
 
       {loading ? (
         <div className="flex items-center justify-center py-32">
