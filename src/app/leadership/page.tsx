@@ -136,7 +136,7 @@ export default function LeadershipPage() {
                   <MemberCard
                     key={member.id}
                     member={member}
-                    photoHeight="h-80"
+                    photoHeight="h-88"
                     nameSize="text-base"
                     positionSize="text-xs"
                     padding="p-5"
@@ -152,7 +152,7 @@ export default function LeadershipPage() {
                   <MemberCard
                     key={member.id}
                     member={member}
-                    photoHeight="h-75"
+                    photoHeight="h-80"
                     nameSize="text-sm"
                     positionSize="text-[10px]"
                     padding="p-4"
