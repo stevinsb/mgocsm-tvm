@@ -61,14 +61,11 @@ export default function Navbar() {
   alt="MGOCSM Logo"
   className="w-10 h-10 rounded-full object-cover border-2 border-gold transition-transform duration-300 group-hover:scale-105"
 />
-              <div className="flex flex-col">
-                <span className="font-poppins font-bold text-navy dark:text-white tracking-wider leading-none text-base">
-                  MGOCSM
-                </span>
-                <span className="font-inter text-gold font-semibold tracking-widest text-[9px] uppercase">
-                  Trivandrum Diocese
-                </span>
-              </div>
+<img
+  src="/mgocsm-logo.png"
+  alt="MGOCSM Trivandrum Diocese"
+  className="h-10 w-auto object-contain brightness-0 invert"
+/>
             </Link>
 
             {/* Desktop Navigation */}
