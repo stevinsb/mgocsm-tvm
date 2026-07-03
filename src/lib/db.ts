@@ -248,7 +248,7 @@ export const db = {
 
   // ── GALLERY ─────────────────────────────────────────────────────────────────
   getGallery: async (): Promise<GalleryItem[]> => {
-    const { data, error } = await supabase.from("gallery").select("*").order("created_at", { ascending: false });
+    const { data, error } = await supabase.from("gallery").select("*").order("order", { ascending: true });
     if (error) { console.error(error); return []; }
     return (data ?? []).map(mapGallery);
   },
