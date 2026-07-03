@@ -12,16 +12,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Brand details */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-0">
             <img
   src="/Mgocsm.png"
   alt="MGOCSM Logo"
-  className="w-9 h-9 rounded-full object-cover border border-gold"
+  className="h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
 />
 <img
   src="/mgocsm-logo.png"
   alt="MGOCSM Trivandrum Diocese"
-  className="h-12 w-auto object-contain brightness-0 invert"
+  className="h-13 w-auto object-contain brightness-0 invert"
 />
             </Link>
             <p className="font-inter text-sm text-slate-400 mt-2 leading-relaxed">
