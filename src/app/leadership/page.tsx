@@ -18,8 +18,65 @@ export default function LeadershipPage() {
     });
   }, []);
 
-  const topMembers = committee.slice(0, 4);
-  const districtMembers = committee.slice(4);
+  const firstMember = committee.slice(0, 1);       // 1st — largest
+  const secondThird = committee.slice(1, 3);        // 2nd & 3rd — medium large
+  const fourthToSixth = committee.slice(3, 6);      // 4th, 5th, 6th — medium
+  const districtMembers = committee.slice(6);       // 7th onwards — small
+
+  const PositionText = ({ position, className }: { position: string; className?: string }) => (
+    <span className={className}>
+      {position.split(" | ").map((line, i) => (
+        <span key={i} className="block">{line}</span>
+      ))}
+    </span>
+  );
+
+  const MemberCard = ({
+    member,
+    photoHeight,
+    nameSize,
+    positionSize,
+    padding,
+  }: {
+    member: LeadershipMember;
+    photoHeight: string;
+    nameSize: string;
+    positionSize: string;
+    padding: string;
+  }) => (
+    <motion.div
+      key={member.id}
+      whileHover={{ y: -6 }}
+      className="glass rounded-3xl overflow-hidden shadow-sm dark:shadow-none border border-slate-200/40 dark:border-slate-800/40 flex flex-col group"
+    >
+      <div className={`relative ${photoHeight} w-full overflow-hidden shrink-0 bg-slate-50 dark:bg-slate-900 flex items-center justify-center`}>
+        {member.photo ? (
+          <img
+            src={member.photo}
+            alt={member.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            onError={e => { (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=400&background=0F2D5C&color=D4AF37`; }}
+          />
+        ) : (
+          <User className="w-20 h-20 text-slate-300" />
+        )}
+        {member.linkedin && (
+          <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+              className="p-3 rounded-full bg-white/10 hover:bg-gold text-white hover:text-navy transition-all duration-200">
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
+        )}
+      </div>
+      <div className={`${padding} flex flex-col gap-1`}>
+        <PositionText position={member.position} className={`${positionSize} text-gold font-bold uppercase tracking-wider`} />
+        <h3 className={`font-poppins font-bold ${nameSize} text-navy dark:text-white leading-snug group-hover:text-gold transition-colors`}>
+          {member.name}
+        </h3>
+      </div>
+    </motion.div>
+  );
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-dark-bg">
@@ -57,54 +114,54 @@ export default function LeadershipPage() {
           <div className="text-center py-24 text-slate-400 font-inter text-sm">No leadership members added yet.</div>
         ) : (
           <>
-            {/* ── Top 4 — Large Cards ── */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {topMembers.map((member) => (
-                <motion.div
-                  key={member.id}
-                  whileHover={{ y: -6 }}
-                  className="glass rounded-3xl overflow-hidden shadow-sm dark:shadow-none border border-slate-200/40 dark:border-slate-800/40 flex flex-col group"
-                >
-                  {/* Photo */}
-                  <div className="relative h-72 w-full overflow-hidden shrink-0 bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
-                    {member.photo ? (
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        onError={e => { (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=400&background=0F2D5C&color=D4AF37`; }}
-                      />
-                    ) : (
-                      <User className="w-20 h-20 text-slate-300" />
-                    )}
-                    {member.linkedin && (
-                      <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-3 rounded-full bg-white/10 hover:bg-gold text-white hover:text-navy transition-all duration-200"
-                        >
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                  {/* Details */}
-                  <div className="p-5 flex flex-col gap-1">
-                  <span className="text-xs text-gold font-bold uppercase tracking-wider">
-  {member.position.split(" | ").map((line, i) => (
-    <span key={i} className="block">{line}</span>
-  ))}
-</span>                    <h3 className="font-poppins font-bold text-base text-navy dark:text-white leading-snug group-hover:text-gold transition-colors">
-                      {member.name}
-                    </h3>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* ── 1st Member — Largest ── */}
+            {firstMember.length > 0 && (
+              <div className="flex justify-center mb-10">
+                <div className="w-full max-w-xs">
+                  <MemberCard
+                    member={firstMember[0]}
+                    photoHeight="h-96"
+                    nameSize="text-lg"
+                    positionSize="text-xs"
+                    padding="p-6"
+                  />
+                </div>
+              </div>
+            )}
 
-            {/* ── District Leadership — Small Cards ── */}
+            {/* ── 2nd & 3rd — Medium Large ── */}
+            {secondThird.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10 max-w-2xl mx-auto">
+                {secondThird.map(member => (
+                  <MemberCard
+                    key={member.id}
+                    member={member}
+                    photoHeight="h-80"
+                    nameSize="text-base"
+                    positionSize="text-xs"
+                    padding="p-5"
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* ── 4th, 5th, 6th — Medium ── */}
+            {fourthToSixth.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+                {fourthToSixth.map(member => (
+                  <MemberCard
+                    key={member.id}
+                    member={member}
+                    photoHeight="h-64"
+                    nameSize="text-sm"
+                    positionSize="text-[10px]"
+                    padding="p-4"
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* ── 7th onwards — District Leadership Small Cards ── */}
             {districtMembers.length > 0 && (
               <>
                 <h3 className="font-poppins font-bold text-xl text-navy dark:text-white mb-8 border-l-4 border-gold pl-4">
@@ -117,7 +174,6 @@ export default function LeadershipPage() {
                       whileHover={{ y: -4 }}
                       className="glass rounded-2xl overflow-hidden shadow-sm border border-slate-200/40 dark:border-slate-800/40 flex flex-col group"
                     >
-                      {/* Photo */}
                       <div className="relative h-36 w-full overflow-hidden bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
                         {member.photo ? (
                           <img
@@ -131,20 +187,19 @@ export default function LeadershipPage() {
                         )}
                         {member.linkedin && (
                           <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a
-                              href={member.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 rounded-full bg-white/10 hover:bg-gold text-white hover:text-navy transition-all duration-200"
-                            >
+                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                              className="p-2 rounded-full bg-white/10 hover:bg-gold text-white hover:text-navy transition-all duration-200">
                               <Linkedin className="w-4 h-4" />
                             </a>
                           </div>
                         )}
                       </div>
-                      {/* Details */}
                       <div className="p-3 flex flex-col gap-0.5">
-                        <span className="text-[9px] text-gold font-bold uppercase tracking-wider leading-tight">{member.position}</span>
+                        <span className="text-[9px] text-gold font-bold uppercase tracking-wider leading-tight">
+                          {member.position.split(" | ").map((line, i) => (
+                            <span key={i} className="block">{line}</span>
+                          ))}
+                        </span>
                         <h3 className="font-poppins font-bold text-xs text-navy dark:text-white leading-snug group-hover:text-gold transition-colors">
                           {member.name}
                         </h3>
