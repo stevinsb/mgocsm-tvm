@@ -100,22 +100,27 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center flex flex-col items-center gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center gap-4"
-          >
-            <span className="bg-gold/10 text-gold border border-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
-            Mar Gregorios Orthodox Christian Student Movement
-            </span>
-            <h1 className="font-poppins font-extrabold text-5xl md:text-7xl text-navy dark:text-white tracking-tight leading-tight max-w-4xl">
-              MGOCSM <span className="gold-gradient-text">Trivandrum</span>
-            </h1>
-            <p className="font-poppins font-bold text-lg md:text-2xl text-slate-800 dark:text-gold-light tracking-wide uppercase mt-1">
-              Worship &bull; Study &bull; Service
-            </p>
-          </motion.div>
+        <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex flex-col items-center gap-4"
+>
+  <span className="bg-gold/10 text-gold border border-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">
+    Mar Gregorios Orthodox Christian Student Movement
+  </span>
+
+  {/* Logo image replacing the text heading */}
+  <img
+    src="/mgocsm-logo.png"
+    alt="MGOCSM Trivandrum Diocese"
+    className="w-72 md:w-96 lg:w-[480px] mx-auto brightness-0 invert drop-shadow-2xl"
+  />
+
+  <p className="font-poppins font-bold text-lg md:text-2xl text-slate-800 dark:text-gold-light tracking-wide uppercase mt-1">
+    Worship &bull; Study &bull; Service
+  </p>
+</motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
