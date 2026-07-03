@@ -92,8 +92,11 @@ export default function LeadershipPage() {
                   </div>
                   {/* Details */}
                   <div className="p-5 flex flex-col gap-1">
-                    <span className="text-xs text-gold font-bold uppercase tracking-wider">{member.position}</span>
-                    <h3 className="font-poppins font-bold text-base text-navy dark:text-white leading-snug group-hover:text-gold transition-colors">
+                  <span className="text-xs text-gold font-bold uppercase tracking-wider">
+  {member.position.split(" | ").map((line, i) => (
+    <span key={i} className="block">{line}</span>
+  ))}
+</span>                    <h3 className="font-poppins font-bold text-base text-navy dark:text-white leading-snug group-hover:text-gold transition-colors">
                       {member.name}
                     </h3>
                   </div>
