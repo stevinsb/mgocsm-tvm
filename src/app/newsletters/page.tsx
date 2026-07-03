@@ -123,7 +123,7 @@ export default function NewsletterPage() {
           <h1 className="font-poppins font-extrabold text-4xl md:text-5xl tracking-tight">Newsletter</h1>
           <div className="w-16 h-1 bg-gold mx-auto rounded-full" />
           <p className="font-inter text-slate-300 text-sm max-w-xl leading-relaxed mt-2">
-            The official publication of MGOCSM Trivandrum Diocese — spiritual reflections, event coverage, and community updates every quarter.
+            The official publication of MGOCSM Trivandrum Diocese — spiritual reflections, event coverage, and community updates every month.
           </p>
         </div>
       </section>
