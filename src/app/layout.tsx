@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description: "Official portal of Mar Gregorios Orthodox Christian Student Movement (MGOCSM), Trivandrum Diocese. Empowering students to grow spiritually, serve society, and strengthen the Orthodox faith.",
   keywords: "MGOCSM, Trivandrum, Mar Gregorios Orthodox Christian Student Movement, MGOCSM Trivandrum Diocese, Orthodox Christian students, Malankara Orthodox, Kerala Christian students, MGOCSM Kerala",
   metadataBase: new URL("https://mgocsmtrivandrum.in"),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   verification: {
     google: "oyqesnW8bF02mi40NTO_cyDFOLdKzB27-9WFdC75alM",
   },
