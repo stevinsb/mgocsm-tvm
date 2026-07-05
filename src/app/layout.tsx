@@ -18,18 +18,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "MGOCSM Trivandrum - Worship • Study • Service",
   description: "Official portal of Mar Gregorios Orthodox Christian Student Movement (MGOCSM), Trivandrum Diocese. Empowering students to grow spiritually, serve society, and strengthen the Orthodox faith.",
-  metadataBase: new URL("https://mgocsmtvm.org"),
+  keywords: "MGOCSM, Trivandrum, Mar Gregorios Orthodox Christian Student Movement, MGOCSM Trivandrum Diocese, Orthodox Christian students, Malankara Orthodox, Kerala Christian students, MGOCSM Kerala",
+  metadataBase: new URL("https://mgocsmtrivandrum.in"),
+  verification: {
+    google: "oyqesnW8bF02mi40NTO_cyDFOLdKzB27-9WFdC75alM",
+  },
   openGraph: {
-    title: "MGOCSM Trivandrum",
-    description: "Empowering students to grow spiritually, serve society, and strengthen the Orthodox faith.",
-    url: "https://mgocsmtvm.org",
-    siteName: "MGOCSM Trivandrum",
+    title: "MGOCSM Trivandrum | Mar Gregorios Orthodox Christian Student Movement",
+    description: "Official website of MGOCSM Trivandrum Diocese — empowering Orthodox Christian students through worship, study, and service.",
+    url: "https://mgocsmtrivandrum.in",
+    siteName: "MGOCSM Trivandrum Diocese",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MGOCSM Trivandrum",
+        alt: "MGOCSM Trivandrum Diocese",
       },
     ],
     locale: "en_IN",
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MGOCSM Trivandrum",
+    title: "MGOCSM Trivandrum | Mar Gregorios Orthodox Christian Student Movement",
     description: "Worship • Study • Service - Mar Gregorios Orthodox Christian Student Movement, Trivandrum Diocese.",
     images: ["/og-image.jpg"],
   },
